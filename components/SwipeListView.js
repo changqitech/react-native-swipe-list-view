@@ -135,9 +135,9 @@ class SwipeListView extends Component {
                 onRowClose: () =>
                     this.props.onRowClose &&
                     this.props.onRowClose(key, this._rows),
-                onRowDidClose: () =>
-                    this.props.onRowDidClose &&
-                    this.props.onRowDidClose(key, this._rows),
+                onRowDidClose: () => {
+                    this.props.onRowDidClose && this.props.onRowDidClose(key, this._rows);
+                },
                 onRowPress: () => this.onRowPress(),
                 setScrollEnabled: enable => this.setScrollEnabled(enable),
                 swipeGestureBegan: () => this.rowSwipeGestureBegan(key),
@@ -148,10 +148,10 @@ class SwipeListView extends Component {
                     onSwipeValueChange={
                         this.props.onSwipeValueChange
                             ? data =>
-                                  this.props.onSwipeValueChange({
-                                      ...data,
-                                      key,
-                                  })
+                                this.props.onSwipeValueChange({
+                                    ...data,
+                                    key,
+                                })
                             : null
                     }
                     ref={row => (this._rows[key] = row)}
@@ -173,10 +173,10 @@ class SwipeListView extends Component {
                     shouldItemUpdate={
                         this.props.shouldItemUpdate
                             ? (currentItem, newItem) =>
-                                  this.props.shouldItemUpdate(
-                                      currentItem,
-                                      newItem
-                                  )
+                                this.props.shouldItemUpdate(
+                                    currentItem,
+                                    newItem
+                                )
                             : null
                     }
                     setScrollEnabled={enable => this.setScrollEnabled(enable)}
