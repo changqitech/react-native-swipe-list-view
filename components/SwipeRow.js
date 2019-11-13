@@ -666,3 +666,4 @@ SwipeRow.defaultProps = {
 };
 
 export default SwipeRow;
+
