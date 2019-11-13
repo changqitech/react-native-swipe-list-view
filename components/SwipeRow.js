@@ -359,7 +359,7 @@ class SwipeRow extends Component {
 
         Animated.timing(this._translateX, {
             toValue,
-            duration: 200,
+            duration: 400,
             easing: Easing.linear,
             // friction: this.props.friction,
             // tension: this.props.tension,
